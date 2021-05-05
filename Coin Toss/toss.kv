@@ -1,0 +1,126 @@
+
+<Root>
+    MDToolbar:
+        title: app.title
+
+        elevation: 10
+
+
+
+MDScreen:
+    md_bg_color: [227/255,225/255,253/255,1]
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "COIN TOSS"
+
+
+            left_action_items: [["menu", lambda x : print("menu is clicked")]]
+            right_action_items: [["dots-vertical", lambda x : print("dots is clicked")]]
+
+        MDLabel:
+            text:"COIN TOSS"
+            halign: "center"
+            font_size: 40
+            padding_x : 20
+            bold: True
+
+
+        MDBoxLayout:
+
+            MDLabel:
+                italic: True
+                underline: True
+                text: "Choice (Heads/Tails)"
+                theme_text_color: "Custom"
+                text_color: [9/255,28/255,27/255,1]
+                pos_hint: {'x':0.1,'y':0.3}
+                font_style: "H5"
+                halign: "center"
+
+            MDLabel:
+
+                italic: True
+                underline: True
+                text: "Results "
+                theme_text_color: "Custom"
+                text_color: [9/255,28/255,27/255,1]
+                pos_hint: {'center_x':0.5,'y':0.3}
+                font_style: "H5"
+                halign: "center"
+
+
+
+
+            MDLabel:
+                italic: True
+                underline: True
+                text: "Actual Toss"
+                theme_text_color: "Custom"
+                text_color: [9/255,28/255,27/255,1]
+                pos_hint: {'right':0,'y':0.3}
+                font_style: "H5"
+                halign: "center"
+
+
+        MDBoxLayout:
+
+            MDTextFieldRect:
+                id: cointoss
+                hint_text: "Heads/Tails"
+                pos_hint: {'center_x':0.2 , 'center_y':0.7}
+                size_hint: [.2,.5]
+                foreground_color: [0/255, 57/255, 230/255,1]
+                background_color: [77/255, 255/255, 255/255,1]
+                halign: "center"
+                font_size: 27
+                multiline: False
+
+            MDTextFieldRect:
+                id: result
+                hint_text: "Results"
+                pos_hint: {'center_x':0.5 , 'center_y':0.7}
+                size_hint: [.2,.5]
+                halign: "center"
+                foreground_color: [0/255, 57/255, 230/255,1]
+                font_size: 27
+                multiline: False
+
+
+            MDTextFieldRect:
+                id: actualtoss
+                hint_text: "Actual Toss"
+                pos_hint: {'center_x':0.7, 'center_y':0.7}
+                size_hint: [.2,.5]
+                foreground_color: [0/255, 57/255, 230/255,1]
+                halign: "center"
+                font_size: 27
+                multiline: False
+
+
+        MDRectangleFlatButton:
+            text: "Click for TOSS"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+            on_press: app.play()
+
+        MDBottomAppBar:
+
+            MDToolbar:
+                title: "v1   R Bharath"
+                icon: "account"
+                icon_color: [1,.3,.5,.4]
+                md_bg_color: [1,.9,.5,.7]
+                specific_text_color: [9/255,28/255,27/255,1]
+                type: "bottom" #end, free-end, free-center
+                round: 50
+                on_action_button: app.clear()
+
+
+
+
+
+
+
+
+
